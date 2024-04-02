@@ -233,7 +233,7 @@ float countDistancesVector(vector<int> v) {
 }
 
 int factorial(int k) {
-    if (k == 1)
+    if (k <= 1)
         return 1;
     return k*factorial(k-1);
 }
@@ -301,6 +301,7 @@ int main() {
 	generate_tree(root, m, n, reps);
     counter = 0;
 	print_tree(root, m, vector<int>(m), distinct);
+    cout << "Wariacje: " << factorial(n)/factorial(n-m) << endl;
 	Zad1(n, m);
 	solutions.clear();
 	root = new Node;
@@ -313,5 +314,6 @@ int main() {
 	generate_tree(root, m, n, reps);
     counter = 0;
 	print_tree(root, m, vector<int>(m), distinct);
+    cout << "Kombinacje: " << factorial(n+m-1)/(factorial(m)*factorial(n-1)) << endl;
 	Zad2(n, m);
 }
